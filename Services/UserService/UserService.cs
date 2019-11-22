@@ -19,10 +19,10 @@ namespace APICoreLatestVersion.Services.UserService
         private readonly Token _tokenSettings;
         public static List<UserModel> Users = new List<UserModel>()
         {
-            new UserModel(){Email="esraa.nasser@outlook.com",FirstName="Esraa",LastName="Nasser",Password="123456aa",PhoneNo="011111111111"},
-            new UserModel(){Email="ahmed.nasser@outlook.com",FirstName="Ahmed",LastName="Nasser",Password="654321aa",PhoneNo="011111111111"},
-            new UserModel(){Email="yassin.ahmed@outlook.com",FirstName="Yassin",LastName="Ahmed",Password="456789aa",PhoneNo="011111111111"},
-            new UserModel(){Email="nada.nasser@outlook.com",FirstName="Nada",LastName="Nasser",Password="987654aa",PhoneNo="011111111111"}
+            new UserModel(){Email="esraa.nasser",FirstName="Esraa",LastName="Nasser",Password="123456aa",PhoneNo="011111111111"},
+            new UserModel(){Email="ahmed.nasser",FirstName="Ahmed",LastName="Nasser",Password="654321aa",PhoneNo="011111111111"},
+            new UserModel(){Email="yassin.ahmed",FirstName="Yassin",LastName="Ahmed",Password="456789aa",PhoneNo="011111111111"},
+            new UserModel(){Email="nada.nasser",FirstName="Nada",LastName="Nasser",Password="987654aa",PhoneNo="011111111111"}
         };
         public UserService(IOptions<Token> tokenSettings)
         {
