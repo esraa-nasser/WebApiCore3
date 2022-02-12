@@ -45,6 +45,7 @@ namespace APICoreLatestVersion
             });
 
             services.AddControllers();
+            services.AddCors();
             var emailSection = Configuration.GetSection("Email");
             services.Configure<EmailModel>(emailSection);
             var tokenSection = Configuration.GetSection("Token");
@@ -92,6 +93,7 @@ namespace APICoreLatestVersion
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(b => b.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 
             app.UseAuthentication();
             app.UseAuthorization();

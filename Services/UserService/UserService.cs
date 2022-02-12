@@ -19,10 +19,10 @@ namespace APICoreLatestVersion.Services.UserService
         private readonly Token _tokenSettings;
         public static List<UserModel> Users = new List<UserModel>()
         {
-            new UserModel(){Email="esraa.nasser",FirstName="Esraa",LastName="Nasser",Password="123456aa",PhoneNo="011111111111"},
-            new UserModel(){Email="ahmed.nasser",FirstName="Ahmed",LastName="Nasser",Password="654321aa",PhoneNo="011111111111"},
-            new UserModel(){Email="yassin.ahmed",FirstName="Yassin",LastName="Ahmed",Password="456789aa",PhoneNo="011111111111"},
-            new UserModel(){Email="nada.nasser",FirstName="Nada",LastName="Nasser",Password="987654aa",PhoneNo="011111111111"}
+            new UserModel(){ Id=1, Email="esraa.nasser",FirstName="Esraa",LastName="Nasser",Password="123456aa",PhoneNo="011111111111"},
+            new UserModel(){ Id=2, Email="ahmed.nasser",FirstName="Ahmed",LastName="Nasser",Password="654321aa",PhoneNo="011111111111"},
+            new UserModel(){ Id=3, Email="yassin.ahmed",FirstName="Yassin",LastName="Ahmed",Password="456789aa",PhoneNo="011111111111"},
+            new UserModel(){ Id=4, Email="nada.nasser",FirstName="Nada",LastName="Nasser",Password="987654aa",PhoneNo="011111111111"}
         };
         public UserService(IOptions<Token> tokenSettings)
         {
@@ -40,7 +40,12 @@ namespace APICoreLatestVersion.Services.UserService
                     Message = $"Welcome Back {user.Email}",
                     Token = new JwtSecurityTokenHandler().WriteToken(token),
                     ExpirationDate = token.ValidTo,
-                    StatusCode = System.Net.HttpStatusCode.OK
+                    StatusCode = System.Net.HttpStatusCode.OK,
+                    FirstName = userLoggedIn.FirstName,
+                    Id = userLoggedIn.Id,
+                    LastName = userLoggedIn.LastName,
+                    UserName = userLoggedIn.FirstName +' '+userLoggedIn.LastName
+                    
                 };
             }
             else
